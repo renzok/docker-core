@@ -1,17 +1,21 @@
 FROM debian:jessie	
-MAINTAINER Renzo Kottmann <rkottman@mpi-bremen.de>
+MAINTAINER Renzo Kottmann <renzo.rkottman@gmail.com>
 
-ENV GMS_DIR=/genes-mapserver
+ENV MAPSERVER_VERSION=6.4.1-5+b3
+ENV MAP_DIR=/maperserver/map
 ENV LANG C.UTF-8
-#RUN update-locale LANG=C.UTF-8
+
+
 
 # Update and upgrade system
 RUN apt-get -qq update --fix-missing && \
-    apt-get install -y cgi-mapserver mapserver-bin
+    apt-get install -y \
+      cgi-mapserver=${MAPSERVER_VERSION} \
+      mapserver-bin=${MAPSERVER_VERSION}
 
 
-RUN mkdir ${GMS_DIR}
+RUN mkdir -p ${MAP_DIR}
 
-VOLUME ${GMS_DIR}
+VOLUME ${MAP_DIR}
 
 ENTRYPOINT ["/usr/lib/cgi-bin/mapserv"]
