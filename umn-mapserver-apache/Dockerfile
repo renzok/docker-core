@@ -32,7 +32,7 @@ RUN a2enmod actions cgi alias rewrite \
 # result in  http://yourhostname.com/cgi-bin/mapserv # Volumes
 VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
 # Expose ports
-EXPOSE 80
+EXPOSE 5555
 # Define default command
 CMD ["-D", "FOREGROUND"]
 
