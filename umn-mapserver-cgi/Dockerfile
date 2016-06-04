@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Renzo Kottmann <renzo.rkottman@gmail.com>
 
 ENV MAPSERVER_VERSION=6.4.1-5+b3
-ENV MAP_DIR=/maperserver/map
+ENV MAP_DIR=/mapserver/map
 ENV LANG C.UTF-8
 
 
