@@ -15,7 +15,7 @@ RUN apt-get -qq update --fix-missing \
 COPY vhost.conf /etc/apache2/sites-available/
 
 # Configure localhost in Apache
-RUN a2enmod actions cgi alias rewrite \
+RUN a2enmod actions cgi alias rewrite headers \
     && sed -ri ' \
        s!^(\s*CustomLog)\s+\S+!\1  /proc/self/fd/1!g; \
        s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
