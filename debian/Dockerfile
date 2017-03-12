@@ -15,7 +15,7 @@ MAINTAINER Renzo Kottmann <renzo.kottmann@gmail.com>
 # layers (could also be done with --no-cache) but this has the
 # adavantage of documenting when last modified :) )
 
-ENV LAST_DOCKER_IMAGE_BUILD='2016-05-28'
+ENV LAST_DOCKER_IMAGE_BUILD='2017-02-12'
 
 ENV USER=mate USER_ID=1000  \
     HOST_GROUP=boatswain HOST_GID=7777
